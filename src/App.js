@@ -3,6 +3,7 @@ import Home from "./Home";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
+import Code from "./components/Code";
 import {
     BrowserRouter as Router,
     Routes,
@@ -25,6 +26,9 @@ export default function App(){
             </Routes>
             <Routes>
                 <Route path="/algorithm" element={<Algorithm />}/>
+            </Routes>
+            <Routes>
+                <Route path="/code" element={<Code />}/>
             </Routes>
         </Router>
     )

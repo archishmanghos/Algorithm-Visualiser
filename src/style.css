@@ -222,3 +222,8 @@ body{
   .light--grey{
       background-color: #DDDDDD;
   }
+
+  .code--container{
+      text-align: center;
+      justify-content: center;
+  }
