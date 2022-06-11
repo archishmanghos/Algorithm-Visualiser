@@ -186,3 +186,25 @@ body{
  .brand-icon:hover{
      text-decoration: none;
   }
+
+  .about--container{
+        margin: 20px;
+        float: left;
+        width: 90%;
+        padding: 40px;
+        padding-left:70px;
+        padding-right: 70px;
+        height: 90%;
+        margin-bottom: 70px;
+        background-color: #D0C9C0;
+        line-height:2;
+        box-shadow: 0 10px 20px grey;
+  }
+
+  .link--class{
+      text-decoration: none;
+  }
+
+  .contact--container{
+      margin: 0 50px;
+  }
