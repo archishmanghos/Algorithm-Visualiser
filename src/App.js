@@ -8,6 +8,7 @@ import {
     Routes,
     Route,
   } from "react-router-dom";
+import Algorithm from "./components/Algorithm";
 
 export default function App(){
     return (
@@ -21,6 +22,9 @@ export default function App(){
             </Routes>
             <Routes>
                 <Route path="/contact" element={<Contact />}/>
+            </Routes>
+            <Routes>
+                <Route path="/algorithm" element={<Algorithm />}/>
             </Routes>
         </Router>
     )

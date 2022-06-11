@@ -164,6 +164,7 @@ body{
 
   .card--main{
     position: relative;
+    height: 100%;
   }
 
   .card--text{
@@ -207,4 +208,17 @@ body{
 
   .contact--container{
       margin: 0 50px;
+      padding: 10px 20px;
+  }
+
+  .algorithm--card--container{
+      height: 200px;
+      margin: 30px;
+      text-align: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px grey;
+  }
+
+  .light--grey{
+      background-color: #DDDDDD;
   }

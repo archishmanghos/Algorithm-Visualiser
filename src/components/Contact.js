@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Contact(){
     return (
-            <section class="mb-4 contact--container">
+            <section class="mb-4 contact--container light--grey">
                 <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
                 <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Do you want to contribite to the project? Please do not hesitate to contact us directly. You can contribute by sending a pull request to our <a href="https://github.com/archishmanghos/Algorithm-Visualisier">project on Github</a>. Our team will review your request within a few hours. Happy Visualising! </p>
                 <div class="row">
