@@ -1,5 +1,6 @@
 import React from "react";
 import '../style.css'
+import ToggleButton from "./ToggleButton";
 
 export default function Navbar(){
     return (
