@@ -4,7 +4,7 @@ import About from "./components/Homepage/Navbar/About";
 import Navbar from "./components/Homepage/Navbar";
 import Contact from "./components/Homepage/Navbar/Contact";
 import Code from "./components/Visualiser/Code";
-import Dijkstra from "./components/Algorithms/Graph/Dijkstra/Dijkstra";
+import Dijkstra from "./components/Algorithms/Graph/Dijkstra";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Algorithm from "./components/Visualiser/Algorithm";
 

@@ -1,12 +1,13 @@
 import React from "react";
-import "./Dijkstra.css";
-import Node from "../Node/Node";
+import "./Graph.css";
+import Graphnavbar from "./Graphnavbar";
+import Node from "./Node/Node";
 
 export default function Dijkstra() {
   let grid = [];
   for (let i = 0; i < 50; i++) {
     let row = [];
-    for (let j = 0; j < 55; j++) {
+    for (let j = 0; j < 57; j++) {
       row.push(i * 50 + j);
     }
     grid.push(row);
@@ -22,5 +23,10 @@ export default function Dijkstra() {
     </tr>
   ));
 
-  return <div className="dijkstra--grid">{gridElements}</div>;
+  return (
+    <div className="grid--container">
+      <Graphnavbar />
+      <div className="dijkstra--grid">{gridElements}</div>
+    </div>
+  );
 }
