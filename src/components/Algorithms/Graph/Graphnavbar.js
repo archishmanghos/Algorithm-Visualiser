@@ -3,49 +3,30 @@ import "./Graph.css";
 import "../../../style.css";
 import Select from "react-select";
 
-export default function Graphnavbar() {
+export default function Graphnavbar(props) {
   const pathAlgos = [
     {
       label: "Breadth First Search (BFS)",
       value: 1,
+      shortHand: "bfs",
     },
     {
       label: "Depth First Search (DFS)",
       value: 2,
+      shortHand: "dfs",
     },
     {
       label: "Dijkstra's Algorithm",
       value: 3,
+      shortHand: "dijk",
     },
   ];
-
-  const [currentAlgo, setCurrentAlgo] = React.useState("None");
-  const [num, setNum] = React.useState(0);
-
-  function handleDropDownChange(data) {
-    setCurrentAlgo(data.label);
-  }
-
-  function decNum() {
-    setNum((prevNum) => prevNum - 1);
-  }
-
-  function incNum(event) {
-    console.log(event.target);
-    setNum((prevNum) => prevNum + 1);
-  }
-
-  function handleChange(event) {
-    setNum(event.target.value);
-  }
-
-  console.log(currentAlgo);
 
   return (
     <nav className="graphnavbar light--grey">
       <Select
         options={pathAlgos}
-        onChange={handleDropDownChange}
+        onChange={props.handleDropDownChange}
         className="graphnavbar--dropdown"
         placeholder="Select Algorithm"
       ></Select>
@@ -54,8 +35,8 @@ export default function Graphnavbar() {
         <button
           className="count-btn count-down"
           type="button"
-          onClick={decNum}
-          disabled={num === 0 ? true : false}
+          onClick={props.decNum}
+          disabled={props.num === 0 ? true : false}
         >
           -
         </button>
@@ -63,14 +44,14 @@ export default function Graphnavbar() {
           type="number"
           name="counter"
           className="counter"
-          value={num}
-          onChange={handleChange}
+          value={props.num}
+          onChange={props.handleChange}
         />
         <button
           className="count-btn count-up"
           type="button"
-          onClick={incNum}
-          disabled={num === 10 ? true : false}
+          onClick={props.incNum}
+          disabled={props.num === 10 ? true : false}
         >
           +
         </button>

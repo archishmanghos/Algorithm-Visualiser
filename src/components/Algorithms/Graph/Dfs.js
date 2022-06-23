@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "./Grid";
 
-export default function Dijk() {
+export default function Dfs() {
   return (
     <div>
       <Grid />
