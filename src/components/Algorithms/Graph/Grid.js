@@ -7,7 +7,7 @@ export default function Grid(props) {
   for (let i = 0; i < 50; i++) {
     let row = [];
     for (let j = 0; j < 52; j++) {
-      row.push(i * 51 + j);
+      row.push(j);
     }
     grid.push(row);
   }
@@ -16,7 +16,12 @@ export default function Grid(props) {
     <tr key={rowIndex}>
       {row.map((colIndex) => (
         <th key={colIndex}>
-          <Node rowIndex={rowIndex} colIndex={colIndex} />
+          <Node
+            rowIndex={rowIndex}
+            colIndex={colIndex}
+            startNode={props.startNode}
+            endNode={props.endNode}
+          />
         </th>
       ))}
     </tr>
@@ -24,9 +29,7 @@ export default function Grid(props) {
 
   return (
     <div className="grid--container">
-      <table className="dijkstra--grid" onClick={props.handleNodeClick}>
-        {gridElements}
-      </table>
+      <table className="dijkstra--grid">{gridElements}</table>
     </div>
   );
 }

@@ -6,3 +6,9 @@
     border: solid;
     margin: 0.5px;
   }
+
+  .start--icon{
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+  }
