@@ -2,29 +2,26 @@ import React from "react";
 import "./Node.css";
 
 export default function Node(props) {
+  const { row, col, startNode, endNode } = props;
+
   function checkIfStartCellsMatch() {
-    if (
-      props.rowIndex === props.startNode.row &&
-      props.colIndex === props.startNode.col
-    ) {
+    if (row === startNode.row && col === startNode.col) {
       return true;
     }
     return false;
   }
 
   function checkIfEndCellsMatch() {
-    if (
-      props.rowIndex === props.endNode.row &&
-      props.colIndex === props.endNode.col
-    )
-      return true;
+    if (row === endNode.row && col === endNode.col) return true;
     return false;
   }
 
-  return (
-    <div className="square">
-      {checkIfStartCellsMatch() && <i class="fas fa-play start--icon"></i>}
-      {checkIfEndCellsMatch() && <i class="fas fa-stop"></i>}
-    </div>
-  );
+  let id = row * 52 + col;
+  const colourClass = checkIfStartCellsMatch()
+    ? "start-node"
+    : checkIfEndCellsMatch()
+    ? "end-node"
+    : "";
+
+  return <div className={`square ${colourClass}`} id={id}></div>;
 }

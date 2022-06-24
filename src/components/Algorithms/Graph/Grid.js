@@ -3,27 +3,27 @@ import "./Graph.css";
 import Node from "./Node/Node";
 
 export default function Grid(props) {
-  let grid = [];
-  for (let i = 0; i < 50; i++) {
-    let row = [];
-    for (let j = 0; j < 52; j++) {
-      row.push(j);
-    }
-    grid.push(row);
-  }
+  const { grid } = props;
 
   const gridElements = grid.map((row, rowIndex) => (
     <tr key={rowIndex}>
-      {row.map((colIndex) => (
-        <th key={colIndex}>
-          <Node
-            rowIndex={rowIndex}
-            colIndex={colIndex}
-            startNode={props.startNode}
-            endNode={props.endNode}
-          />
-        </th>
-      ))}
+      {row.map((node, colIndex) => {
+        const { row, col, distance, wall, visited, prevNode } = node;
+        return (
+          <th key={colIndex}>
+            <Node
+              row={row}
+              col={col}
+              startNode={props.startNode}
+              endNode={props.endNode}
+              distance={distance}
+              wall={wall}
+              visited={visited}
+              prevNode={prevNode}
+            />
+          </th>
+        );
+      })}
     </tr>
   ));
 

@@ -1,10 +1,30 @@
 import React from "react";
-import Graphnavbar from "./Graphnavbar";
 import Dfs from "./Dfs";
-import Bfs from "./Bfs";
+import { Bfs, findShortestPath } from "./Bfs";
 import Dijk from "./Dijkstra";
+import Grid from "./Grid";
+import Select from "react-select";
+import "../../../style.css";
+import "./Graph.css";
 
 export default function Graph() {
+  const pathAlgos = [
+    {
+      label: "Breadth First Search (BFS)",
+      value: 1,
+      shortHand: "bfs",
+    },
+    {
+      label: "Depth First Search (DFS)",
+      value: 2,
+      shortHand: "dfs",
+    },
+    {
+      label: "Dijkstra's Algorithm",
+      value: 3,
+      shortHand: "dijk",
+    },
+  ];
   const [currentAlgo, setCurrentAlgo] = React.useState("None");
   const [num, setNum] = React.useState(0);
   const [startNode, setStartNode] = React.useState({
@@ -16,6 +36,27 @@ export default function Graph() {
     row: null,
     col: null,
   });
+
+  let grid = [];
+  for (let i = 0; i < 50; i++) {
+    let row = [];
+    for (let j = 0; j < 52; j++) {
+      row.push(createNewNode(i, j));
+    }
+    grid.push(row);
+  }
+
+  function createNewNode(i, j) {
+    const newNode = {
+      row: i,
+      col: j,
+      distance: Infinity,
+      wall: false,
+      visited: false,
+      prevNode: null,
+    };
+    return newNode;
+  }
 
   const handleStartNodeChange = (event) => {
     const { name, value } = event.target;
@@ -54,30 +95,133 @@ export default function Graph() {
     setNum(event.target.value);
   };
 
-  function chooseAlgo() {
-    if (currentAlgo === "dfs") return <Dfs />;
-    else if (currentAlgo === "bfs")
-      return (
-        <Bfs
-          startNode={startNode}
-          endNode={endNode}
-          handleStartNodeChange={handleStartNodeChange}
-          handleEndNodeChange={handleEndNodeChange}
-        />
-      );
-    else if (currentAlgo === "dijk") return <Dijk />;
+  console.log(currentAlgo);
+  function showAlgoName() {
+    if (currentAlgo === "dfs") return "DFS";
+    else if (currentAlgo === "bfs") return "BFS";
+    else if (currentAlgo === "dijk") return "Dijkstra";
+    else return "Algo";
+  }
+
+  const handleVisualise = () => {
+    const orderedVisitedNodes = Bfs(startNode, endNode, grid);
+    const nodesInShortestPathOrder = findShortestPath(endNode);
+    animateDijkstra(orderedVisitedNodes, nodesInShortestPathOrder);
+  };
+
+  function animateDijkstra(orderedVisitedNodes, findShortestPath) {
+    for (let i = 0; i <= orderedVisitedNodes.length; i++) {
+      if (i === orderedVisitedNodes.length) {
+        setTimeout(() => {
+          animateShortesPath(findShortestPath);
+        }, 10 * i);
+        return;
+      }
+      setTimeout(() => {
+        const curNode = orderedVisitedNodes[i];
+        const id = curNode.row * 52 + curNode.col;
+        document.getElementById(id).className = "visited--node";
+      }, 10 * i);
+    }
+  }
+
+  function animateShortesPath(findShortestPath) {
+    for (let i = 0; i < findShortestPath.length; i++) {
+      setTimeout(() => {
+        const curNode = findShortestPath[i];
+        const id = curNode.row * 52 + curNode.col;
+        document.getElementById(id).className = "shortestpath--node";
+      }, 50 * i);
+    }
   }
 
   return (
     <div>
-      <Graphnavbar
-        handleDropDownChange={handleDropDownChange}
-        num={num}
-        decNum={decNum}
-        incNum={incNum}
-        handleChange={handleChange}
-      />
-      {chooseAlgo()}
+      <nav className="graphnavbar light--grey">
+        <Select
+          options={pathAlgos}
+          onChange={handleDropDownChange}
+          className="graphnavbar--dropdown"
+          placeholder="Select Algorithm"
+        ></Select>
+        <div className="increment-decrement">
+          <label className="increment-decrement--label">Speed</label>
+          <button
+            className="count-btn count-down"
+            type="button"
+            onClick={decNum}
+            disabled={num === 0 ? true : false}
+          >
+            -
+          </button>
+          <input
+            type="number"
+            name="counter"
+            className="counter"
+            value={num}
+            onChange={handleChange}
+          />
+          <button
+            className="count-btn count-up"
+            type="button"
+            onClick={incNum}
+            disabled={num === 10 ? true : false}
+          >
+            +
+          </button>
+        </div>
+      </nav>
+      <div>
+        <form className="light--grey bfs--container">
+          <input
+            className="bfs--container--form--input"
+            type="number"
+            placeholder="Start Row Cell"
+            name="row"
+            value={startNode.row}
+            onChange={handleStartNodeChange}
+          ></input>
+          <input
+            className="bfs--container--form--input"
+            type="number"
+            placeholder="Start Col Cell"
+            name="col"
+            value={startNode.col}
+            onChange={handleStartNodeChange}
+          ></input>
+          <input
+            className="bfs--container--form--input"
+            type="number"
+            placeholder="End Row Cell"
+            name="row"
+            value={endNode.row}
+            onChange={handleEndNodeChange}
+          ></input>
+          <input
+            className="bfs--container--form--input"
+            type="number"
+            placeholder="End Col Cell"
+            name="col"
+            value={endNode.col}
+            onChange={handleEndNodeChange}
+          ></input>
+          <button
+            type="button"
+            onClick={handleVisualise}
+            disabled={
+              startNode.row === null ||
+              startNode.col === null ||
+              endNode.row === null ||
+              endNode.col === null
+                ? true
+                : false
+            }
+          >
+            Visualise {showAlgoName()}
+          </button>
+        </form>
+      </div>
+      <Grid startNode={startNode} endNode={endNode} grid={grid} />
     </div>
   );
 }
