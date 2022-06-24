@@ -21,9 +21,6 @@ export default function Node(props) {
     return false;
   }
 
-  if (checkIfStartCellsMatch()) console.log("matched");
-  if (checkIfEndCellsMatch()) console.log("matched");
-
   return (
     <div className="square">
       {checkIfStartCellsMatch() && <i class="fas fa-play start--icon"></i>}
