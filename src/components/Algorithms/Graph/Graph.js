@@ -6,6 +6,7 @@ import Grid from "./Grid";
 import Select from "react-select";
 import "../../../style.css";
 import "./Graph.css";
+import "./Node/Node.css";
 
 export default function Graph() {
   const pathAlgos = [
@@ -30,11 +31,19 @@ export default function Graph() {
   const [startNode, setStartNode] = React.useState({
     row: null,
     col: null,
+    distance: 0,
+    wall: false,
+    visited: false,
+    prevNode: null,
   });
 
   const [endNode, setEndNode] = React.useState({
     row: null,
     col: null,
+    distance: Infinity,
+    wall: false,
+    visited: false,
+    prevNode: null,
   });
 
   let grid = [];
@@ -95,7 +104,6 @@ export default function Graph() {
     setNum(event.target.value);
   };
 
-  console.log(currentAlgo);
   function showAlgoName() {
     if (currentAlgo === "dfs") return "DFS";
     else if (currentAlgo === "bfs") return "BFS";
@@ -105,7 +113,9 @@ export default function Graph() {
 
   const handleVisualise = () => {
     const orderedVisitedNodes = Bfs(startNode, endNode, grid);
-    const nodesInShortestPathOrder = findShortestPath(endNode);
+    const nodesInShortestPathOrder = findShortestPath(endNode, grid);
+    console.log(orderedVisitedNodes);
+    console.log(nodesInShortestPathOrder);
     animateDijkstra(orderedVisitedNodes, nodesInShortestPathOrder);
   };
 
@@ -120,7 +130,7 @@ export default function Graph() {
       setTimeout(() => {
         const curNode = orderedVisitedNodes[i];
         const id = curNode.row * 52 + curNode.col;
-        document.getElementById(id).className = "visited--node";
+        document.getElementById(id).className = "square visited--node";
       }, 10 * i);
     }
   }
@@ -130,7 +140,8 @@ export default function Graph() {
       setTimeout(() => {
         const curNode = findShortestPath[i];
         const id = curNode.row * 52 + curNode.col;
-        document.getElementById(id).className = "shortestpath--node";
+        console.log(curNode);
+        document.getElementById(id).className = "square shortestpath--node";
       }, 50 * i);
     }
   }
@@ -207,7 +218,7 @@ export default function Graph() {
           ></input>
           <button
             type="button"
-            onClick={handleVisualise}
+            onClick={() => handleVisualise()}
             disabled={
               startNode.row === null ||
               startNode.col === null ||

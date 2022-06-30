@@ -1,28 +1,33 @@
-import React from "react";
+// import React from "react";
 import "../../../style.css";
 
 export function Bfs(startNode, endNode, grid) {
   const orderedVisitedNodes = [];
   startNode.distance = 0;
-  const nodesToVisit = getNodes(grid);
-  while (!!nodesToVisit.length) {
-    sortDistance(nodesToVisit);
-    const curNode = nodesToVisit.shift();
-    if (curNode.wall) continue;
-    if (curNode.distance === Infinity) return orderedVisitedNodes;
-    curNode.visited = true;
-    orderedVisitedNodes.push(curNode);
-    if (curNode === endNode) return orderedVisitedNodes;
-    updateVisit(curNode, grid);
+  const unvisitedNodes = getNodes(grid, startNode);
+  while (!!unvisitedNodes.length) {
+    sortDistance(unvisitedNodes);
+    const closestNode = unvisitedNodes.shift();
+    if (closestNode.visited || closestNode.wall) continue;
+    if (closestNode.distance === Infinity) return orderedVisitedNodes;
+    closestNode.visited = true;
+    orderedVisitedNodes.push(closestNode);
+    updateVisit(closestNode, grid);
+    if (closestNode.row === endNode.row && closestNode.col === endNode.col)
+      return orderedVisitedNodes;
   }
+  return orderedVisitedNodes;
 }
 
-function getNodes(grid) {
+function getNodes(grid, startNode) {
   const nodes = [],
     n = grid.length,
     m = grid[0].length;
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < m; j++) {
+      if (i === startNode.row && j === startNode.col) {
+        grid[i][j].distance = 0;
+      }
       nodes.push(grid[i][j]);
     }
   }
@@ -37,6 +42,7 @@ function updateVisit(curNode, grid) {
   const getNewNeighbours = getNeighbours(curNode, grid);
   for (const neighbour of getNewNeighbours) {
     neighbour.distance = curNode.distance + 1;
+    grid[neighbour.row][neighbour.col].prevNode = curNode;
     neighbour.prevNode = curNode;
   }
 }
@@ -51,11 +57,12 @@ function getNeighbours(curNode, grid) {
   return newNeighbours.filter((neighbour) => !neighbour.visited);
 }
 
-export function findShortestPath(endNode) {
+export function findShortestPath(endNode, grid) {
   const finalPath = [];
-  while (endNode !== null) {
-    finalPath.unshift(endNode);
-    endNode = endNode.prevNode;
+  let newEndNode = grid[endNode.row][endNode.col];
+  while (newEndNode !== null) {
+    finalPath.unshift(newEndNode);
+    newEndNode = newEndNode.prevNode;
   }
   return finalPath;
 }
