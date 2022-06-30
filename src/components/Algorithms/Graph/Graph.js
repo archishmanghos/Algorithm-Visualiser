@@ -27,7 +27,7 @@ export default function Graph() {
     },
   ];
   const [currentAlgo, setCurrentAlgo] = React.useState("None");
-  const [num, setNum] = React.useState(0);
+  const [num, setNum] = React.useState(1);
   const [startNode, setStartNode] = React.useState({
     row: null,
     col: null,
@@ -114,8 +114,6 @@ export default function Graph() {
   const handleVisualise = () => {
     const orderedVisitedNodes = Bfs(startNode, endNode, grid);
     const nodesInShortestPathOrder = findShortestPath(endNode, grid);
-    console.log(orderedVisitedNodes);
-    console.log(nodesInShortestPathOrder);
     animateDijkstra(orderedVisitedNodes, nodesInShortestPathOrder);
   };
 
@@ -124,14 +122,14 @@ export default function Graph() {
       if (i === orderedVisitedNodes.length) {
         setTimeout(() => {
           animateShortesPath(findShortestPath);
-        }, 10 * i);
+        }, (10 - num + 1) * i);
         return;
       }
       setTimeout(() => {
         const curNode = orderedVisitedNodes[i];
         const id = curNode.row * 52 + curNode.col;
         document.getElementById(id).className = "square visited--node";
-      }, 10 * i);
+      }, (10 - num + 1) * i);
     }
   }
 
@@ -142,7 +140,7 @@ export default function Graph() {
         const id = curNode.row * 52 + curNode.col;
         console.log(curNode);
         document.getElementById(id).className = "square shortestpath--node";
-      }, 50 * i);
+      }, (10 - num + 1) * 10 * i);
     }
   }
 
@@ -161,7 +159,7 @@ export default function Graph() {
             className="count-btn count-down"
             type="button"
             onClick={decNum}
-            disabled={num === 0 ? true : false}
+            disabled={num === 1 ? true : false}
           >
             -
           </button>
