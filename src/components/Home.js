@@ -2,11 +2,11 @@ import React from "react";
 import Main from "./Homepage/Main";
 import Footer from "./Homepage/Footer";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <section>
-      <Main />
-      <Footer />
+      <Main toggle={props.toggle} triggerToggle={props.triggerToggle} />
+      <Footer toggle={props.toggle} />
     </section>
   );
 }

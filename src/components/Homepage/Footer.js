@@ -2,9 +2,9 @@ import React from "react";
 import "./Homepage.css";
 import "../../style.css";
 
-export default function Footer() {
+export default function Footer(props) {
   return (
-    <div className="footer--container">
+    <div className={`footer--container ${props.toggle ? "navbar--dark" : "navbar--light"}`}>
       <a
         href="https://twitter.com/ar_chi_es"
         className="fab fa-twitter brand-icon"

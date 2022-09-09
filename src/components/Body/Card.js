@@ -9,7 +9,7 @@ export default function Card(props) {
       to={`/${props.route}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
-      <div class="card card--main" style={{ width: "18rem" }}>
+      <div className={`card card--main ${props.toggle ? "card--dark" : "card--light"}`} style={{ width: "18rem" }}>
         <img
           class="card-img-top"
           src={`/assets/${props.coverImg}`}

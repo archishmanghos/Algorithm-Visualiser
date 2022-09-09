@@ -3,9 +3,9 @@ import "./Homepage.css";
 import "../../style.css";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
-    <nav className="navbar--container">
+    <nav className={`navbar--container ${props.toggle ? "navbar--dark" : "navbar--light"}`}>
       <div className="navbar--logo--container">
         <img
           src="./assets/algorithm--logo.jpg"
