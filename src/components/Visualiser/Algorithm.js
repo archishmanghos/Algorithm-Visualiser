@@ -3,27 +3,27 @@ import AlgorithmCard from "./AlgorithmCard";
 import "./Visualiser.css";
 import "../../style.css";
 
-export default function Algorithm() {
+export default function Algorithm(props) {
   return (
-    <div class="row light--grey">
+    <div class={`row ${props.toggle ? "dark--one" : "light--zero"}`}>
       <div class="col">
-        <AlgorithmCard name="Sorting Algos" route="sort" />
+        <AlgorithmCard name="Sorting Algos" route="sort" toggle={props.toggle} />
       </div>
       <div class="col">
-        <AlgorithmCard name="Graph Algos" route="graph" />
+        <AlgorithmCard name="Graph Algos" route="graph" toggle={props.toggle} />
       </div>
       <div class="col">
-        <AlgorithmCard name="Tree Algos" route="tree" />
+        <AlgorithmCard name="Tree Algos" route="tree" toggle={props.toggle} />
       </div>
       <div class="w-100"></div>
       <div class="col">
-        <AlgorithmCard name="Other Algo 1" />
+        <AlgorithmCard name="Other Algo 1" toggle={props.toggle} />
       </div>
       <div class="col">
-        <AlgorithmCard name="Other Algo 2" />
+        <AlgorithmCard name="Other Algo 2" toggle={props.toggle} />
       </div>
       <div class="col">
-        <AlgorithmCard name="Other Algo 3" />
+        <AlgorithmCard name="Other Algo 3" toggle={props.toggle} />
       </div>
     </div>
   );

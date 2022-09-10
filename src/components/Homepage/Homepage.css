@@ -61,6 +61,36 @@
   color: white;
 }
 
+.dark--two {
+  background-color: #121212;
+  color: white;
+}
+
+.dark--one {
+  background-color: #2B2B2B;
+  color: white;
+}
+
+.dark--zero {
+  background-color: #423F3E;
+  color: white;
+}
+
+.light--two {
+  background-color: white;
+  color: black;
+}
+
+.light--one {
+  background-color: #CFD2CF;
+  color: black;
+}
+
+.light--zero {
+  background-color: #A2B5BB;
+  color: black;
+}
+
 .card--container {
   display: flex;
   justify-content: space-around;
@@ -79,6 +109,10 @@
   text-align: center;
 }
 
+.footer--dark {
+  box-shadow: 0 50vh 0 50vh #121212;
+}
+
 .brand-icon {
   text-decoration: none;
   color: black;
@@ -92,13 +126,9 @@
 .about--container {
   margin: 20px;
   float: left;
-  width: 90%;
+  width: 95%;
   padding: 40px;
-  padding-left: 70px;
-  padding-right: 70px;
   height: 90%;
-  margin-bottom: 70px;
-  background-color: #d0c9c0;
   line-height: 2;
   box-shadow: 0 10px 20px grey;
 }
@@ -108,6 +138,13 @@
 }
 
 .contact--container {
-  margin: 0 50px;
-  padding: 10px 20px;
+  padding: 30px;
+}
+
+.icon--dark {
+  color: white;
+}
+
+.icon--light {
+  color: #121212;
 }

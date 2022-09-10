@@ -9,58 +9,59 @@
   margin: 10px;
 }
 
-.graphnavbar--dropdown{
-    width: 25%;
+.graphnavbar--dropdown {
+  width: 25%;
 }
 
 .increment-decrement {
-    text-align: center;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-top: 0;
-    width: 30%;
+  text-align: center;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-top: 0;
+  width: 30%;
 }
+
 .count-btn {
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-    outline: 0;
-    border: 1px solid;
-    border-color: white;
-    font-size: 15px;
-    font-weight: bold;
-    color: black;
-    cursor: pointer;
-    background-color: #4CACBC;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  outline: 0;
+  border: 1px solid;
+  border-color: white;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  background-color: #4CACBC;
 }
 
 .counter {
-    font-size: 30px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    text-align: center;
-    padding: 3px 13px;
-    width: 20%;
-    margin: 2px;
+  font-size: 30px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 3px 13px;
+  width: 20%;
+  margin: 2px;
 }
 
-button:disabled, button[disabled]{
-    border: 1px solid #999999;
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
 }
 
-.increment-decrement--label{
-    margin: 0 10px;
-    font-weight: 600;
+.increment-decrement--label {
+  margin: 0 10px;
+  font-weight: 600;
 }
 
-.bfs--container{
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+.bfs--container {
+  padding-bottom: 20px;
 }
 
-.bfs--container--form--input{
+.bfs--container--form--input {
   width: 10%;
   margin: 0 10px;
   border-radius: 5px;
@@ -68,10 +69,10 @@ button:disabled, button[disabled]{
   text-indent: 2px;
 }
 
-.red-square{
+.red-square {
   background-color: red;
 }
 
-.blue-square{
+.blue-square {
   background-color: blue;
 }

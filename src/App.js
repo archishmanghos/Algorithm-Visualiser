@@ -21,19 +21,19 @@ export default function App() {
         <Route path="/" element={<Home toggle={toggle} triggerToggle={triggerToggle} />} />
       </Routes>
       <Routes>
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About toggle={toggle} />} />
       </Routes>
       <Routes>
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact toggle={toggle} />} />
       </Routes>
       <Routes>
-        <Route path="/algorithm" element={<Algorithm />} />
+        <Route path="/algorithm" element={<Algorithm toggle={toggle} />} />
       </Routes>
       <Routes>
-        <Route path="/code" element={<Code />} />
+        <Route path="/code" element={<Code toggle={toggle} />} />
       </Routes>
       <Routes>
-        <Route path="/graph" element={<Graph />} />
+        <Route path="/graph" element={<Graph toggle={toggle} />} />
       </Routes>
     </Router>
   );

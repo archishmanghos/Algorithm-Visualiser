@@ -2,9 +2,9 @@ import React from "react";
 import "../Homepage.css";
 import "../../../style.css";
 
-export default function Contact() {
+export default function Contact(props) {
   return (
-    <section class="mb-4 contact--container light--grey">
+    <section class={`mb-4 contact--container ${props.toggle ? "dark--one" : "light--one"}`}>
       <h2 class="h1-responsive font-weight-bold text-center my-4">
         Contact us
       </h2>

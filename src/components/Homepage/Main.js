@@ -1,15 +1,11 @@
 import React from "react";
-import ToggleButton from "../Body/ToggleButton";
 import "./Homepage.css";
 import "../../style.css";
 import Card from "../Body/Card";
 
 export default function Main(props) {
   return (
-    <div className={`main--container ${props.toggle ? "main--dark" : "main--light"}`}>
-      <div className="toggle--container">
-        <ToggleButton toggle={props.toggle} triggerToggle={props.triggerToggle} />
-      </div>
+    <div className={`main--container ${props.toggle ? "dark--one" : "light--zero"}`}>
       <div className="card--container">
         <Card
           coverImg="algo--visualiser--logo.jpg"

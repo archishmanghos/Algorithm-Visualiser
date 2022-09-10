@@ -16,6 +16,7 @@
     "react-select": "^5.3.2",
     "react-slider": "^2.0.1",
     "react-toggle-button": "^2.2.0",
+    "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

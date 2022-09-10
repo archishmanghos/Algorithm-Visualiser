@@ -8,7 +8,7 @@ import "../../../style.css";
 import "./Graph.css";
 import "./Node/Node.css";
 
-export default function Graph() {
+export default function Graph(props) {
   const pathAlgos = [
     {
       label: "Breadth First Search (BFS)",
@@ -146,14 +146,14 @@ export default function Graph() {
 
   return (
     <div>
-      <nav className="graphnavbar light--grey">
+      <nav className={`graphnavbar ${props.toggle ? "dark--one" : "light--zero"}`}>
         <Select
           options={pathAlgos}
           onChange={handleDropDownChange}
           className="graphnavbar--dropdown"
           placeholder="Select Algorithm"
         ></Select>
-        <div className="increment-decrement">
+        <div className={`increment-decrement`}>
           <label className="increment-decrement--label">Speed</label>
           <button
             className="count-btn count-down"
@@ -181,7 +181,7 @@ export default function Graph() {
         </div>
       </nav>
       <div>
-        <form className="light--grey bfs--container">
+        <form className={`bfs--container ${props.toggle ? "dark--one" : "light--zero"}`}>
           <input
             className="bfs--container--form--input"
             type="number"
@@ -219,9 +219,9 @@ export default function Graph() {
             onClick={() => handleVisualise()}
             disabled={
               startNode.row === null ||
-              startNode.col === null ||
-              endNode.row === null ||
-              endNode.col === null
+                startNode.col === null ||
+                endNode.row === null ||
+                endNode.col === null
                 ? true
                 : false
             }
@@ -230,7 +230,7 @@ export default function Graph() {
           </button>
         </form>
       </div>
-      <Grid startNode={startNode} endNode={endNode} grid={grid} />
+      <Grid startNode={startNode} endNode={endNode} grid={grid} toggle={props.toggle} />
     </div>
   );
 }

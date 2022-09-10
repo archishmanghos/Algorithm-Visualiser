@@ -1,12 +1,13 @@
 .algorithm--card--container {
-    height: 200px;
-    margin: 30px;
-    text-align: center;
-    justify-content: center;
-    box-shadow: 0 10px 20px grey;
-  }
+  height: 200px;
+  margin: 30px;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px grey;
+}
 
-  .code--container {
-    text-align: center;
-    justify-content: center;
-  }
+.code--container {
+  text-align: center;
+  justify-content: center;
+  height: 600px;
+}

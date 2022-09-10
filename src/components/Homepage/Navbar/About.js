@@ -2,11 +2,11 @@ import React from "react";
 import "../Homepage.css";
 import "../../../style.css";
 
-export default function About() {
+export default function About(props) {
   return (
-    <div className="about--container">
+    <div className={`about--container ${props.toggle ? "dark--one" : "light--one"}`}>
       <h3>About Us:</h3>
-      <p className="about--para">
+      <p className={`about--para`}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Id velit ut tortor
         pretium viverra suspendisse potenti nullam ac. Malesuada proin libero

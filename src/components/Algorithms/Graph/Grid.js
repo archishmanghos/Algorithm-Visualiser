@@ -28,7 +28,7 @@ export default function Grid(props) {
   ));
 
   return (
-    <div className="grid--container">
+    <div className={`grid--container ${props.toggle ? "dark--one" : "light--zero"}`}>
       <table className="dijkstra--grid">{gridElements}</table>
     </div>
   );
