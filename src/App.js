@@ -7,6 +7,7 @@ import Code from "./components/Visualiser/Code";
 import Graph from "./components/Algorithms/Graph/Graph";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Algorithm from "./components/Visualiser/Algorithm";
+import Sorting from './components/Algorithms/Sorting/Bubble-Sort/Sorting'
 
 export default function App() {
   const [toggle, setToggle] = useState(false);
@@ -34,6 +35,9 @@ export default function App() {
       </Routes>
       <Routes>
         <Route path="/graph" element={<Graph toggle={toggle} />} />
+      </Routes>
+      <Routes>
+        <Route path="/sort" element={<Sorting toggle={toggle} />} />
       </Routes>
     </Router>
   );

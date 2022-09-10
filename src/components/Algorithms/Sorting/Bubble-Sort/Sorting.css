@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,700&family=Ubuntu:ital,wght@1,400;1,700&display=swap');
+
+
+.frame {
+    font-family: 'Roboto Mono', monospace;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border-radius: 10px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: 365px;
+    margin: 5em 0;
+}
+
+.satyajit--card {
+    padding: 2px 1em;
+    background: rgb(255, 217, 30);
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    /* padding: 4px 4px;
+  margin: 9px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-class {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px;
+    background: #7763e0;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 8px 20px;
+    margin: 7px;
+    font-size: 18px;
+}
+
+.btn-class:hover {
+    background: #107b8e;
+    color: rgb(39, 34, 34);
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,148 @@
+/* .bar {
+    width: 2em;
+    height: 200px;
+    margin: 0 1em;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(-30deg);
+}
+
+.side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(254, 254, 254, 0.25);
+}
+
+.back {
+    transform: translateZ(-4px);
+}
+
+.left {
+    transform-origin: left;
+    transform: rotateY(90deg);
+}
+
+.right {
+    transform-origin: right;
+    transform: rotateY(-90deg);
+}
+
+.top {
+    height: 34px;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    background: rgba(254, 254, 254, 0.15);
+}
+
+.bottom {
+    height: 34px;
+    transform-origin: top;
+    background: rgba(225, 0, 120, 0.5);
+    box-shadow: rgba(225, 0, 120, 0.2);
+}
+
+.color-bar {
+    background: rgba(225, 0, 120, 0.5);
+    box-shadow: rgba(225, 0, 120, 0.2);
+    transition: 0.3s;
+}
+
+.input {
+    text-align: center;
+    transform: rotate(-90deg);
+    height: 25px;
+    outline: none;
+}
+
+.quantity-button {
+    text-align: center;
+    background-color: rgba(10, 255, 1, 0.2);
+    margin: 1px;
+    cursor: pointer;
+    user-select: none;
+}
+.quantity-button::hover {
+    opacity: 0.5;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+} */
+
+/* .bar{
+    border-radius: 5px 5px 0 0;
+    width: 25px;
+    margin: 10px;
+    margin-right: 10px;
+}
+.text{
+    border: none;
+    background: transparent;
+    text-align: center;
+    transform: rotate(90deg);
+    outline: none;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,700&family=Ubuntu:ital,wght@1,400;1,700&display=swap');
+
+.bar {
+    /* border-radius: 5px 5px 0px 0px;
+    width: 25px;
+    margin: 10px;
+    margin-right: 10px; */
+    border-radius: 8px 8px 8px 8px;
+    width: 25px;
+    margin: 11px;
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+.text {
+    font-size: 15px;
+    position: relative;
+    border: none;
+    background: transparent;
+    text-align: center;
+    transform: rotate(90deg);
+    outline: none;
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+}
+
+.quantity-btn {
+    /* border-radius: 7px;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    background: #7763e0;
+    color: white;
+    margin: 1px;
+    text-align: center;
+    cursor: pointer; */
+    border-radius: 113px;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    background: #15d665;
+    color: white;
+    margin: 2px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 8px;
+}
+
+.quantity-btn:hover {
+    background: #107b8e;
+    color: rgb(39, 34, 34);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
