@@ -1,7 +1,7 @@
 import React from "react";
-import Dfs from "./Dfs";
+// import Dfs from "./Dfs";
 import { Bfs, findShortestPath } from "./Bfs";
-import Dijk from "./Dijkstra";
+// import Dijk from "./Dijkstra";
 import Grid from "./Grid";
 import Select from "react-select";
 import "../../../style.css";

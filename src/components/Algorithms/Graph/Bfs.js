@@ -21,8 +21,8 @@ export function Bfs(startNode, endNode, grid) {
 
 function getNodes(grid, startNode) {
   const nodes = [],
-    n = grid.length,
-    m = grid[0].length;
+  n = grid.length,
+  m = grid[0].length;
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < m; j++) {
       if (i === startNode.row && j === startNode.col) {

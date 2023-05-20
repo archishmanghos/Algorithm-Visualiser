@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Bar from './Bar';
 import BubbleSort from './BubbleSort';
 import './Sorting.css';
-export default class Sorting extends Component {
+export default class BSorting extends Component {
     state = {
         array: [],
         steps: [],

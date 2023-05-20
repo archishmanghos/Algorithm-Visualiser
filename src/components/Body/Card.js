@@ -13,7 +13,7 @@ export default function Card(props) {
         <img
           class="card-img-top"
           src={`/assets/${props.coverImg}`}
-          alt="Card image cap"
+          alt="Card  cap"
         />
         <div class="card-body">
           <p class="card-text card--text">{props.title}</p>

@@ -36,6 +36,14 @@ export default function Navbar(props) {
         </p>
         <p className="navbar--options--common">
           <Link
+            to="/ide"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            IDE
+          </Link>
+        </p>
+        <p className="navbar--options--common">
+          <Link
             to="/contact"
             style={{ textDecoration: "none", color: "inherit" }}
           >
