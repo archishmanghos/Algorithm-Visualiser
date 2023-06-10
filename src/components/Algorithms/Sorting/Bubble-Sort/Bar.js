@@ -42,14 +42,14 @@ const Bars = ({ index, length, colorKey, changeArray }) => {
         }
     }
 
-    const increament = () => {
+    const increment = () => {
         if (len < 350) {
             setLen(len + 1);
             changeArray(index, len + 1);
         }
 
     }
-    const decreament = () => {
+    const decrement = () => {
         if (len > 0) {
             setLen(len - 1);
             changeArray(index, len - 1);
@@ -66,8 +66,8 @@ const Bars = ({ index, length, colorKey, changeArray }) => {
                 onChange={handleChange}
             />
             <div className="quantityNav">
-                <div className="quantity-btn quantity-up" style={quantityBtnStyle} onClick={increament}>+</div>
-                <div className="quantity-btn quantity-down" style={quantityBtnStyle} onClick={decreament}>-</div>
+                <div className="quantity-btn quantity-up" style={quantityBtnStyle} onClick={increment}>+</div>
+                <div className="quantity-btn quantity-down" style={quantityBtnStyle} onClick={decrement}>-</div>
             </div>
         </div>
     )

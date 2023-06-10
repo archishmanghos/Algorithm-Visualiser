@@ -13,9 +13,9 @@ export default function Algorithm(props) {
         <AlgorithmCard name="Graph Algos" route="graph" toggle={props.toggle} />
       </div>
       <div class="col">
-        <AlgorithmCard name="Tree Algos" route="tree" toggle={props.toggle} />
+        <AlgorithmCard name="Searching Algos" route="search" toggle={props.toggle} />
       </div>
-      <div class="w-100"></div>
+      {/* <div class="w-100"></div>
       <div class="col">
         <AlgorithmCard name="Other Algo 1" toggle={props.toggle} />
       </div>
@@ -24,7 +24,7 @@ export default function Algorithm(props) {
       </div>
       <div class="col">
         <AlgorithmCard name="Other Algo 3" toggle={props.toggle} />
-      </div>
+      </div> */}
     </div>
   );
 }

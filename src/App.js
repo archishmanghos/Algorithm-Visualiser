@@ -12,6 +12,11 @@ import Sorting from "./components/Algorithms/Sorting/Sorting";
 import BSorting from "./components/Algorithms/Sorting/Bubble-Sort/BSorting";
 import MainScreen from "./components/Algorithms/Sorting/Selection-Sort/MainScreen";
 import InsertionSortVisualizer from "./components/Algorithms/Sorting/Insertion-Sort/ISorting";
+import MergeSort from "./components/Algorithms/Sorting/Merge-Sort/MergeSort";
+import HeapSortVisualizer from "./components/Algorithms/Sorting/Heap-Sort/heapsort";
+import Searching from './components/Algorithms/Searching/Searching'
+import LinearSearch from "./components/Algorithms/Searching/LinearSearch";
+import BinarySearch from "./components/Algorithms/Searching/BinarySearch";
 
 export default function App() {
   const [toggle, setToggle] = useState(false);
@@ -47,6 +52,9 @@ export default function App() {
         <Route path="/sort" element={<Sorting toggle={toggle} />} />
       </Routes>
       <Routes>
+        <Route path="/search" element={<Searching toggle={toggle} />} />
+      </Routes>
+      <Routes>
         <Route path="/bubble-sort" element={<BSorting toggle={toggle} />} />
       </Routes>
       <Routes>
@@ -54,6 +62,18 @@ export default function App() {
       </Routes>
       <Routes>
         <Route path="/insertion-sort" element={<InsertionSortVisualizer toggle={toggle} />} />
+      </Routes>
+      <Routes>
+        <Route path="/merge-sort" element={<MergeSort toggle={toggle}/>} />
+      </Routes>
+      <Routes>
+        <Route path="/heap-sort" element={<HeapSortVisualizer toggle={toggle}/>} />
+      </Routes>
+      <Routes>
+        <Route path="/linear-search" element={<LinearSearch toggle={toggle}/>} />
+      </Routes>
+      <Routes>
+        <Route path="/binary-search" element={<BinarySearch toggle={toggle}/>} />
       </Routes>
     </Router>
   );

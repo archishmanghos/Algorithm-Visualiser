@@ -1,0 +1,55 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,700&family=Ubuntu:ital,wght@1,400;1,700&display=swap'); */
+.linearSearchContainer {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Montserrat;
+    font-size: 16px;
+}
+
+.header {
+    font-size: 35px;
+    text-align: center;
+}
+
+#array {
+    background-color: white;
+    height: 305px;
+    width: 850px;
+    margin: auto;
+    position: relative;
+    margin-top: 64px;
+}
+
+.block {
+    width: 28px;
+    background-color: #4248f5;
+    position: absolute;
+    bottom: 0px;
+    transition: 0.2s all ease;
+    border-radius: 9px 9px 5px 5px
+}
+
+.block_id {
+    position: absolute;
+    color: black;
+    margin-top: -20px;
+    width: 100%;
+    text-align: center;
+}
+
+#btn{
+    background: #15d665;
+    color: white;
+    width: 80px;
+    height: 40px;
+    border-radius: 9px 9px 9px 9px
+    
+}
+#btn:hover {
+    background: #107b8e;
+    color: rgb(39, 34, 34);
+}
+.c-fname{
+    border-radius: 10px 10px 10px 10px
+}
