@@ -20,9 +20,6 @@ export default function Sorting(props) {
       <div class="col">
         <AlgorithmCard name="Heap Sort" route="heap-sort" toggle={props.toggle} />
       </div>
-      <div class="col">
-        <AlgorithmCard name="Other Sort 3" toggle={props.toggle} />
-      </div>
     </div>
   );
 }

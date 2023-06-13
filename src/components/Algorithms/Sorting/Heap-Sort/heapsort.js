@@ -52,11 +52,11 @@ function HeapSortVisualizer() {
       swap(arr, i, largest);
       setSwappingIndexes([i, largest]);
       setArr([...arr]);
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       await heapify(arr, n, largest);
       setSwappingIndexes([]);
       setArr([...arr]);
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
     }
   }
   
