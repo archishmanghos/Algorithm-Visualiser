@@ -1,7 +1,7 @@
 ## How to run the application locally?
 
 0. Check if Node js is installed on the system. This can be checked by running the command `node --version`. If it returns a version, it means Node has been installed, else install it from the [official site](https://nodejs.org/en).
-1. The project on [Github](https://github.com/archishmanghos/Algorithm-Visualisier) will contain a `Code` button in green like below:
+1. The project on [Github](https://github.com/archishmanghos/Algorithm-Visualiser) will contain a `Code` button in green like below:
 
    <details><summary></summary>
 
