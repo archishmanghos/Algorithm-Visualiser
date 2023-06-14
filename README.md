@@ -16,7 +16,7 @@
 6. cd to the Algorithm Visualiser directory. The final path should look something like this (the first folders may vary, the end should be like this):
    <details><summary></summary>
 
-   ![](pictures/terminal.png)
+   ![](pictures/terminal2.png)
 
    </details>
 
