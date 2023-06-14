@@ -16,12 +16,10 @@ function HeapSortVisualizer() {
   async function heapSort() {
     setIsSorting(true);
   
-    // Build max heap
     for (let i = Math.floor(arr.length / 2) - 1; i >= 0; i--) {
       await heapify(arr, arr.length, i);
     }
   
-    // Heap sort
     for (let i = arr.length - 1; i > 0; i--) {
       swap(arr, 0, i);
       setSwappingIndexes([0, i]);
